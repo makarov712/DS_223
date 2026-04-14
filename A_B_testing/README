@@ -1,0 +1,35 @@
+# A/B Testing - Multi-Armed Bandit
+
+## Overview
+This project implements two Multi-Armed Bandit strategies for A/B testing:
+- Epsilon-Greedy with decaying epsilon (e = 1/t)
+- Thompson Sampling with known precision (Gaussian conjugate prior)
+
+Four advertisement bandits are tested with true mean rewards of [1, 2, 3, 4] over 20,000 trials.
+
+## Setup
+Install dependencies:
+
+    pip install -r requirements.txt
+
+## Run
+
+    python Bandit.py
+
+## Output
+- results.csv - rewards per trial (columns: Bandit, Reward, Algorithm)
+- plot1_learning_curves.png - learning process for each algorithm
+- plot2_comparison.png - cumulative rewards and regrets comparison
+
+## Project Structure
+- Bandit.py
+- requirements.txt
+- README.md
+
+## Results
+- Epsilon-Greedy cumulative reward: ~79843
+- Epsilon-Greedy cumulative regret: ~156
+- Thompson Sampling cumulative reward: ~80105
+- Thompson Sampling cumulative regret: ~-105
+
+Thompson Sampling converges faster to the optimal bandit.
